@@ -26,9 +26,9 @@ public class Gui extends javax.swing.JFrame {
     public Gui() {
         initComponents();
         
-        String host = "jdbc:mysql://localhost:3306/ejabberd";
-        String uName = "root";
-        String uPass = "endn8558";
+        String host = "jdbc:derby://localhost:1527/ejabberd";
+        String uName = "karim";
+        String uPass = "1234";
         try {
             con = DriverManager.getConnection(host, uName, uPass);
         } catch (SQLException ex) {
@@ -161,7 +161,7 @@ public class Gui extends javax.swing.JFrame {
                     + tf_passwd.getText() + "', '" 
                     + tf_email.getText() + "', '" 
                     + tf_fname.getText() + "', '" 
-                    + tf_lname.getText() + "');";
+                    + tf_lname.getText() + "')";
                     
             stmt.execute(SQL);
         } catch (SQLException ex) {
