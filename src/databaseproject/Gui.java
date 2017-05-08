@@ -45,12 +45,10 @@ public class Gui extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        tf_username = new javax.swing.JTextField();
         tf_passwd = new javax.swing.JTextField();
         tf_email = new javax.swing.JTextField();
         tf_fname = new javax.swing.JTextField();
@@ -58,8 +56,6 @@ public class Gui extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setText("username");
 
         jLabel2.setText("password");
 
@@ -113,23 +109,17 @@ public class Gui extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel1)
                             .addComponent(jLabel3))
-                        .addGap(96, 96, 96)
+                        .addGap(97, 97, 97)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tf_email)
-                            .addComponent(tf_username)
                             .addComponent(tf_passwd))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tf_username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(18, 18, 18)
+                .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tf_passwd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
@@ -156,8 +146,8 @@ public class Gui extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
             Statement stmt = con.createStatement();
-            String SQL = "INSERT INTO users (username, password, email, firstname, lastname) VALUES ('"
-                    + tf_username.getText() + "', '" 
+            String SQL = "INSERT INTO users ( password, email, firstname, lastname) VALUES ('"
+                    
                     + tf_passwd.getText() + "', '" 
                     + tf_email.getText() + "', '" 
                     + tf_fname.getText() + "', '" 
@@ -214,7 +204,6 @@ public class Gui extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -223,6 +212,5 @@ public class Gui extends javax.swing.JFrame {
     private javax.swing.JTextField tf_fname;
     private javax.swing.JTextField tf_lname;
     private javax.swing.JTextField tf_passwd;
-    private javax.swing.JTextField tf_username;
     // End of variables declaration//GEN-END:variables
 }
