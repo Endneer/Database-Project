@@ -16,14 +16,14 @@ import java.util.logging.Logger;
  *
  * @author endneer
  */
-public class RegisterationScreen extends javax.swing.JFrame {
+public class RegistrationScreen extends javax.swing.JFrame {
     
     Connection con;
     
     /**
      * Creates new form Gui
      */
-    public RegisterationScreen() {
+    public RegistrationScreen() {
         initComponents();
         
         String host = "jdbc:derby://localhost:1527/ejabberd";
@@ -32,7 +32,7 @@ public class RegisterationScreen extends javax.swing.JFrame {
         try {
             con = DriverManager.getConnection(host, uName, uPass);
         } catch (SQLException ex) {
-            Logger.getLogger(RegisterationScreen.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RegistrationScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -151,8 +151,11 @@ public class RegisterationScreen extends javax.swing.JFrame {
                     + tf_lname.getText() + "')";
                     
             stmt.execute(SQL);
+            MainScreen mainScreen = new MainScreen(tf_email.getText());
+            mainScreen.setVisible(true);
+            this.setVisible(false);
         } catch (SQLException ex) {
-            Logger.getLogger(RegisterationScreen.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RegistrationScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -181,21 +184,23 @@ public class RegisterationScreen extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RegisterationScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistrationScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RegisterationScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistrationScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RegisterationScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistrationScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RegisterationScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistrationScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RegisterationScreen().setVisible(true);
+                new RegistrationScreen().setVisible(true);
             }
         });
     }
