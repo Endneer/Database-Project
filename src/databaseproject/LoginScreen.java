@@ -134,8 +134,7 @@ public class LoginScreen extends javax.swing.JFrame {
                 + Arrays.toString(tf_passwd.getPassword()) + "'";
                 
                 ResultSet rs = stmnt.executeQuery(SQL);
-                rs.first();
-                String email = rs.getString("email");
+                String email = rs.getString(1);
                 if(email != null && !email.equals("")){
                     MainScreen mainScreen = new MainScreen(email);
                     mainScreen.setVisible(true);
